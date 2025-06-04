@@ -5,22 +5,22 @@ pipeline{
 		jdk 'JDK'
 	}
 	stages{
-		stage(Checkout){
+		stage('Checkout'){
 			steps{
 				git branch:'master', url:'https://github.com/chethanyan/simpGradJenk.git'
 			}
 		}
-		stage(Build){
+		stage('Build'){
 			steps{
 				sh 'gradle build'
 			}
 		}
-		stage(Test){
+		stage('Test'){
 			steps{
 				sh 'gradle test'
 			}
 		}
-		stage(Run Application){
+		stage('Run Application'){
 			steps{
 				sh 'gradle run'
 			}
